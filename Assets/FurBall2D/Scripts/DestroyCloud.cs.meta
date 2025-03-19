@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: df49915e024f25b40bf1006debd9d983
+timeCreated: 1435949893
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 40588
+  packageName: FurBall 2D V1.2 mobile optimized
+  packageVersion: 1.2
+  assetPath: Assets/FurBall2D/Scripts/DestroyCloud.cs
+  uploadId: 89137
