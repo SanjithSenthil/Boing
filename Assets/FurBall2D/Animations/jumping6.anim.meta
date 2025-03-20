@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ed1479e19f7c5fd4ba2ab8ae66402bba
+timeCreated: 1435441683
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 40588
+  packageName: FurBall 2D V1.2 mobile optimized
+  packageVersion: 1.2
+  assetPath: Assets/FurBall2D/Animations/jumping6.anim
+  uploadId: 89137
