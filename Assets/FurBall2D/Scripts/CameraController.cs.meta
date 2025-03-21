@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 27aa631175c0b0247abfecb1c28e576f
+timeCreated: 1435316514
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 40588
+  packageName: FurBall 2D V1.2 mobile optimized
+  packageVersion: 1.2
+  assetPath: Assets/FurBall2D/Scripts/CameraController.cs
+  uploadId: 89137
