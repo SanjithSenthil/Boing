@@ -231,11 +231,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 115215078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad6eb99b6bcb44498622c21aa876b7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a33108a1b36d924b99f774de35ec331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 305572799}
-  manager: {fileID: 541949592}
+  manager: {fileID: 0}
 --- !u!1 &305572797
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,10 +398,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 541949591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f40f6e8cad38b7049b7ae23c4a6ea0b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 191d787c2e91acc4b998dc4cf7d00385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startTimer:
+    m_PersistentCalls:
+      m_Calls: []
+  resetTimer:
+    m_PersistentCalls:
+      m_Calls: []
+  pauseTimer:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &541949593

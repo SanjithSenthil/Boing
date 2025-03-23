@@ -16,14 +16,37 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeLeft = 15f + 2*Time.deltaTime;
+        timeLeft = 15f + 5*Time.deltaTime;
         timerActive = false;
-        manager.startTimer.AddListener(activateTimer);
+        manager.startTimer.AddListener(ActivateTimer);
+        manager.resetTimer.AddListener(ResetTimer);
+        manager.pauseTimer.AddListener(PauseTimer);
     }
 
-    public void activateTimer()
+    public void ActivateTimer()
     {
         timerActive = true;
+    }
+
+    public void ResetTimer()
+    {
+        timeLeft = 15f + 5 * Time.deltaTime;
+        timerActive = false;
+
+        // Divide the time by 60
+        float minutes = Mathf.FloorToInt(timeLeft / 60);
+
+        // Returns the remainder
+        float seconds = Mathf.FloorToInt(timeLeft % 60);
+        string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
+        // Set the text string
+        timerText.SetText(timeString);
+    }
+
+    public void PauseTimer()
+    {
+        timerActive = false;
+        timerText.SetText("Timer paused");
     }
 
     // Update is called once per frame
