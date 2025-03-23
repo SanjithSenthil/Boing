@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials.meta
 guid: 3b5b04b1b3116f746ad1cc1d9fa77823
+=======
+guid: f5da59d0715974f708d573a1f5912d50
+>>>>>>> main:Assets/FurBall2D.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
