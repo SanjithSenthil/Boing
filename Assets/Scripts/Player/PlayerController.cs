@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 
         // Ensure InputManager reference is valid
         if (inputManager == null) {
-            inputManager = FindObjectOfType<InputManager>();
+            inputManager = FindFirstObjectByType<InputManager>();
             if (inputManager == null) {
                 Debug.LogError("InputManager not found! Please add an InputManager to the scene.");
                 return;
