@@ -3,29 +3,32 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public TMPro.TMP_Text scoreText;
-    public GameObject[] lifeHearts;
 
-    public TMPro.TMP_Text livesText;
+    [Header("UI References")]
+    [SerializeField] private CoinCounterUI coinCounter;
+    [SerializeField] private GameObject[] lifeHearts;
+
+    [Header("Player Stats")]
     public int score = 0;
     public int lives = 3;
 
-    void Awake()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
     }
-        void Start()
+
+    private void Start()
     {
         UpdateHUD();
     }
 
-   public void AddScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        UpdateHUD();
+        UpdateScoreUI();
     }
 
     public void LoseLife()
@@ -37,30 +40,32 @@ public class GameManager : MonoBehaviour
 
         if (lives <= 0)
         {
+            // TODO: Show Game Over UI
             // Debug.Log("Game Over!");
             // if (gameOverUI != null)
             //     gameOverUI.SetActive(true);
         }
     }
 
-    void UpdateHUD()
+    private void UpdateHUD()
     {
         UpdateScoreUI();
         UpdateHearts();
     }
 
-    void UpdateScoreUI()
+    private void UpdateScoreUI()
     {
-        if (scoreText != null)
-            scoreText.text = "SCORE: " + score;
+        if (coinCounter != null)
+            coinCounter.UpdateScore(score); // Make sure you're calling UpdateScore() not AnimateScore()
     }
 
-    void UpdateHearts()
+    private void UpdateHearts()
     {
+        if (lifeHearts == null || lifeHearts.Length == 0) return;
+
         for (int i = 0; i < lifeHearts.Length; i++)
         {
             lifeHearts[i].SetActive(i < lives);
         }
     }
-
 }
