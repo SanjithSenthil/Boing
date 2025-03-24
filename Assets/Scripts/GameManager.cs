@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public TMPro.TMP_Text scoreText;
+    public GameObject[] lifeHearts;
+
     public TMPro.TMP_Text livesText;
     public int score = 0;
     public int lives = 3;
@@ -28,21 +30,37 @@ public class GameManager : MonoBehaviour
 
     public void LoseLife()
     {
+        if (lives <= 0) return;
+
         lives--;
-        UpdateHUD();
+        UpdateHearts();
+
         if (lives <= 0)
         {
-            // basic Game over without hud
-            Debug.Log("Game Over!");
+            // Debug.Log("Game Over!");
+            // if (gameOverUI != null)
+            //     gameOverUI.SetActive(true);
         }
     }
 
     void UpdateHUD()
     {
+        UpdateScoreUI();
+        UpdateHearts();
+    }
+
+    void UpdateScoreUI()
+    {
         if (scoreText != null)
             scoreText.text = "SCORE: " + score;
-
-        if (livesText != null)
-            livesText.text = "LIVES: " + lives;
     }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < lifeHearts.Length; i++)
+        {
+            lifeHearts[i].SetActive(i < lives);
+        }
+    }
+
 }
