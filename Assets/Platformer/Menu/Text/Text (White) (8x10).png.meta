@@ -259,10 +259,10 @@ TextureImporter:
       name: Text (White) (8x10)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 8
-        height: 10
+        x: 1
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: Text (White) (8x10)_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 30
-        width: 8
-        height: 10
+        x: 9
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,10 +303,10 @@ TextureImporter:
       name: Text (White) (8x10)_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 40
-        width: 8
-        height: 10
+        x: 17
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,10 +325,10 @@ TextureImporter:
       name: Text (White) (8x10)_3
       rect:
         serializedVersion: 2
-        x: 8
-        y: 30
-        width: 8
-        height: 10
+        x: 25
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,10 +347,10 @@ TextureImporter:
       name: Text (White) (8x10)_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 40
-        width: 8
-        height: 10
+        x: 33
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,10 +369,10 @@ TextureImporter:
       name: Text (White) (8x10)_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 30
-        width: 8
-        height: 10
+        x: 41
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,10 +391,10 @@ TextureImporter:
       name: Text (White) (8x10)_6
       rect:
         serializedVersion: 2
-        x: 24
-        y: 40
-        width: 8
-        height: 10
+        x: 49
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,10 +413,10 @@ TextureImporter:
       name: Text (White) (8x10)_7
       rect:
         serializedVersion: 2
-        x: 24
-        y: 30
-        width: 8
-        height: 10
+        x: 57
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,10 +435,10 @@ TextureImporter:
       name: Text (White) (8x10)_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 40
-        width: 8
-        height: 10
+        x: 66
+        y: 41
+        width: 4
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,10 +457,10 @@ TextureImporter:
       name: Text (White) (8x10)_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 30
-        width: 8
-        height: 10
+        x: 73
+        y: 41
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,10 +479,10 @@ TextureImporter:
       name: Text (White) (8x10)_10
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 8
-        height: 10
+        x: 1
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -501,10 +501,10 @@ TextureImporter:
       name: Text (White) (8x10)_11
       rect:
         serializedVersion: 2
-        x: 40
-        y: 30
-        width: 8
-        height: 10
+        x: 9
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,10 +523,10 @@ TextureImporter:
       name: Text (White) (8x10)_12
       rect:
         serializedVersion: 2
-        x: 48
-        y: 40
-        width: 8
-        height: 10
+        x: 17
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,10 +545,10 @@ TextureImporter:
       name: Text (White) (8x10)_13
       rect:
         serializedVersion: 2
-        x: 48
-        y: 30
-        width: 8
-        height: 10
+        x: 25
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,10 +567,10 @@ TextureImporter:
       name: Text (White) (8x10)_14
       rect:
         serializedVersion: 2
-        x: 56
-        y: 40
-        width: 8
-        height: 10
+        x: 33
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -589,10 +589,10 @@ TextureImporter:
       name: Text (White) (8x10)_15
       rect:
         serializedVersion: 2
-        x: 56
-        y: 30
-        width: 8
-        height: 10
+        x: 41
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,10 +611,10 @@ TextureImporter:
       name: Text (White) (8x10)_16
       rect:
         serializedVersion: 2
-        x: 64
-        y: 30
-        width: 8
-        height: 10
+        x: 49
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,10 +633,10 @@ TextureImporter:
       name: Text (White) (8x10)_17
       rect:
         serializedVersion: 2
-        x: 65
-        y: 40
+        x: 57
+        y: 31
         width: 6
-        height: 10
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,10 +655,10 @@ TextureImporter:
       name: Text (White) (8x10)_18
       rect:
         serializedVersion: 2
-        x: 72
-        y: 40
-        width: 8
-        height: 10
+        x: 65
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,10 +677,10 @@ TextureImporter:
       name: Text (White) (8x10)_19
       rect:
         serializedVersion: 2
-        x: 72
-        y: 30
-        width: 8
-        height: 10
+        x: 73
+        y: 31
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -699,10 +699,10 @@ TextureImporter:
       name: Text (White) (8x10)_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 20
-        width: 8
-        height: 10
+        x: 1
+        y: 21
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,10 +721,10 @@ TextureImporter:
       name: Text (White) (8x10)_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 8
-        height: 10
+        x: 9
+        y: 21
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -743,10 +743,10 @@ TextureImporter:
       name: Text (White) (8x10)_22
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 22
-        height: 20
+        x: 17
+        y: 21
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -765,10 +765,10 @@ TextureImporter:
       name: Text (White) (8x10)_23
       rect:
         serializedVersion: 2
-        x: 8
-        y: 20
-        width: 8
-        height: 10
+        x: 25
+        y: 21
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,10 +787,10 @@ TextureImporter:
       name: Text (White) (8x10)_24
       rect:
         serializedVersion: 2
-        x: 8
-        y: 10
-        width: 8
-        height: 10
+        x: 33
+        y: 21
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -809,10 +809,10 @@ TextureImporter:
       name: Text (White) (8x10)_25
       rect:
         serializedVersion: 2
-        x: 16
-        y: 20
-        width: 8
-        height: 10
+        x: 41
+        y: 21
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -831,10 +831,10 @@ TextureImporter:
       name: Text (White) (8x10)_26
       rect:
         serializedVersion: 2
-        x: 24
-        y: 20
-        width: 8
-        height: 10
+        x: 1
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -853,10 +853,10 @@ TextureImporter:
       name: Text (White) (8x10)_27
       rect:
         serializedVersion: 2
-        x: 24
-        y: 10
-        width: 8
-        height: 10
+        x: 3
+        y: 1
+        width: 20
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -875,10 +875,10 @@ TextureImporter:
       name: Text (White) (8x10)_28
       rect:
         serializedVersion: 2
-        x: 32
-        y: 20
-        width: 8
-        height: 10
+        x: 9
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -897,10 +897,10 @@ TextureImporter:
       name: Text (White) (8x10)_29
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 8
-        height: 20
+        x: 25
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,10 +919,10 @@ TextureImporter:
       name: Text (White) (8x10)_30
       rect:
         serializedVersion: 2
-        x: 40
-        y: 20
-        width: 8
-        height: 10
+        x: 33
+        y: 1
+        width: 6
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -941,10 +941,10 @@ TextureImporter:
       name: Text (White) (8x10)_31
       rect:
         serializedVersion: 2
-        x: 40
-        y: 10
-        width: 8
-        height: 10
+        x: 41
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -963,10 +963,10 @@ TextureImporter:
       name: Text (White) (8x10)_32
       rect:
         serializedVersion: 2
-        x: 48
-        y: 10
-        width: 8
-        height: 10
+        x: 49
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -985,10 +985,10 @@ TextureImporter:
       name: Text (White) (8x10)_33
       rect:
         serializedVersion: 2
-        x: 56
-        y: 10
-        width: 8
-        height: 10
+        x: 57
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1007,10 +1007,10 @@ TextureImporter:
       name: Text (White) (8x10)_34
       rect:
         serializedVersion: 2
-        x: 64
-        y: 10
-        width: 8
-        height: 10
+        x: 65
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1029,10 +1029,10 @@ TextureImporter:
       name: Text (White) (8x10)_35
       rect:
         serializedVersion: 2
-        x: 72
-        y: 10
-        width: 8
-        height: 10
+        x: 73
+        y: 11
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1051,10 +1051,10 @@ TextureImporter:
       name: Text (White) (8x10)_36
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 8
-        height: 10
+        x: 25
+        y: 1
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1073,10 +1073,10 @@ TextureImporter:
       name: Text (White) (8x10)_37
       rect:
         serializedVersion: 2
-        x: 41
-        y: 0
-        width: 6
-        height: 10
+        x: 42
+        y: 1
+        width: 4
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1095,10 +1095,10 @@ TextureImporter:
       name: Text (White) (8x10)_38
       rect:
         serializedVersion: 2
-        x: 49
-        y: 0
-        width: 6
-        height: 10
+        x: 50
+        y: 1
+        width: 4
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1117,10 +1117,10 @@ TextureImporter:
       name: Text (White) (8x10)_39
       rect:
         serializedVersion: 2
-        x: 56
-        y: 1
-        width: 16
-        height: 8
+        x: 57
+        y: 2
+        width: 14
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1139,7 +1139,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f09312ae5215396479521181db3072de
     internalID: 0
     vertices: []
     indices: 
