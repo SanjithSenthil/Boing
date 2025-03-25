@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public TMPro.TMP_Text livesText;
     public int score = 0;
     public int lives = 3;
+    private GameObject player;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         void Start()
     {
         UpdateHUD();
+        player = GameObject.FindWithTag("Player");
     }
 
    public void AddScore(int scoreToAdd)
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         {
             // basic Game over without hud
             Debug.Log("Game Over!");
+            Destroy(player);
         }
     }
 
