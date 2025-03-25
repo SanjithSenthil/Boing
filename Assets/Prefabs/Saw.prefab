@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8417218451515865436}
   - component: {fileID: 1322373193888593406}
   - component: {fileID: 7584701084909927582}
+  - component: {fileID: 2724632844227899120}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Obstacle
@@ -147,3 +148,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.1875
+--- !u!114 &2724632844227899120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704187713673085899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53999b27b19014a2db3e76e67dcae245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndFreezeObstacle:
+    m_PersistentCalls:
+      m_Calls: []

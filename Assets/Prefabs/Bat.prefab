@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1407263956161575120}
   - component: {fileID: 1877292137385981595}
   - component: {fileID: 102663136414443539}
-  - component: {fileID: 6978825468442394608}
+  - component: {fileID: 8837624575270577143}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Obstacle
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.875, y: 1.53}
   m_EdgeRadius: 0
---- !u!114 &6978825468442394608
+--- !u!114 &8837624575270577143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,9 +167,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4934898175871811861}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 056990107b6de4cf8a600554094dfece, type: 3}
+  m_Script: {fileID: 11500000, guid: e32e9258eac1a4e9285417067fc9ae1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftPointX: 2
   rightPointX: 2
   speed: 2
+  EndFreezeEnemy:
+    m_PersistentCalls:
+      m_Calls: []
