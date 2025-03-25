@@ -3,49 +3,72 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public TMPro.TMP_Text scoreText;
-    public TMPro.TMP_Text livesText;
+
+    [Header("UI References")]
+    [SerializeField] private CoinCounterUI coinCounter;
+    [SerializeField] private GameObject[] lifeHearts;
+
+    [Header("Player Stats")]
     public int score = 0;
     public int lives = 3;
     private GameObject player;
 
-    void Awake()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Destroy(gameObject);
     }
-        void Start()
+
+    private void Start()
     {
         UpdateHUD();
         player = GameObject.FindWithTag("Player");
     }
 
-   public void AddScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        UpdateHUD();
+        UpdateScoreUI();
     }
 
     public void LoseLife()
     {
+        if (lives <= 0) return;
+
         lives--;
-        UpdateHUD();
+        UpdateHearts();
+
         if (lives <= 0)
         {
-            // basic Game over without hud
-            Debug.Log("Game Over!");
+            Time.timeScale = 1f; 
+            GameData.finalScore = score;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
             Destroy(player);
         }
+
     }
 
-    void UpdateHUD()
+    private void UpdateHUD()
     {
-        if (scoreText != null)
-            scoreText.text = "SCORE: " + score;
+        UpdateScoreUI();
+        UpdateHearts();
+    }
 
-        if (livesText != null)
-            livesText.text = "LIVES: " + lives;
+    private void UpdateScoreUI()
+    {
+        if (coinCounter != null)
+            coinCounter.UpdateScore(score);
+    }
+
+    private void UpdateHearts()
+    {
+        if (lifeHearts == null || lifeHearts.Length == 0) return;
+
+        for (int i = 0; i < lifeHearts.Length; i++)
+        {
+            lifeHearts[i].SetActive(i < lives);
+        }
     }
 }
