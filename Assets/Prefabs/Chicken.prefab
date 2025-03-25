@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7638076562733717754}
   - component: {fileID: 4296157030384238078}
   - component: {fileID: 6905995463044780503}
-  - component: {fileID: 3499280208682563407}
+  - component: {fileID: 7545646487577306825}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Obstacle
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.76, y: 1.8}
   m_EdgeRadius: 0
---- !u!114 &3499280208682563407
+--- !u!114 &7545646487577306825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,13 +167,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 242952000326778832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 056990107b6de4cf8a600554094dfece, type: 3}
+  m_Script: {fileID: 11500000, guid: e32e9258eac1a4e9285417067fc9ae1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftPointX: 2
   rightPointX: 2
   speed: 2
-  playerCollision: {fileID: 0}
-  EndFreeze:
+  EndFreezeEnemy:
     m_PersistentCalls:
       m_Calls: []
