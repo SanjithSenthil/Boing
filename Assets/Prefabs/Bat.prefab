@@ -173,3 +173,7 @@ MonoBehaviour:
   leftPointX: 2
   rightPointX: 2
   speed: 2
+  playerCollision: {fileID: 3647211262323822282, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
+  EndFreeze:
+    m_PersistentCalls:
+      m_Calls: []

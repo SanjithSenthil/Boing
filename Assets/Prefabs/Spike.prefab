@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 717569940527887949}
   - component: {fileID: 6926482445061528822}
   - component: {fileID: 8456508860750949642}
+  - component: {fileID: 5170457965407358486}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Obstacle
@@ -134,3 +135,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.44, y: 0.4375}
   m_EdgeRadius: 0
+--- !u!114 &5170457965407358486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161307202497013759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53999b27b19014a2db3e76e67dcae245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndFreezeObstacle:
+    m_PersistentCalls:
+      m_Calls: []
