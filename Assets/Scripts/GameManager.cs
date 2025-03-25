@@ -7,9 +7,6 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private CoinCounterUI coinCounter;
     [SerializeField] private GameObject[] lifeHearts;
-    [SerializeField] private GameOverUI gameOverUI;
-    [SerializeField] private PauseMenuUI pauseMenuUI;
-
 
     [Header("Player Stats")]
     public int score = 0;
@@ -25,8 +22,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameOverUI?.gameObject.SetActive(false); // hides at start
-        pauseMenuUI?.gameObject.SetActive(false); // hides at start
         UpdateHUD();
     }
 
@@ -43,11 +38,11 @@ public class GameManager : MonoBehaviour
         lives--;
         UpdateHearts();
 
-        if (lives <= 0 && gameOverUI != null)
+        if (lives <= 0)
         {
-            gameOverUI.gameObject.SetActive(true); // ✅ 
-            Time.timeScale = 0f; 
-            gameOverUI.ShowGameOver(score);
+            Time.timeScale = 1f; 
+            GameData.finalScore = score;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
 
     }
@@ -61,7 +56,7 @@ public class GameManager : MonoBehaviour
     private void UpdateScoreUI()
     {
         if (coinCounter != null)
-            coinCounter.UpdateScore(score); // Make sure you're calling UpdateScore() not AnimateScore()
+            coinCounter.UpdateScore(score);
     }
 
     private void UpdateHearts()
