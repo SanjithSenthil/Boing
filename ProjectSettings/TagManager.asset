@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - Snowflake
+  - BrokenBox
+  - Box
   layers:
   - Default
   - TransparentFX
