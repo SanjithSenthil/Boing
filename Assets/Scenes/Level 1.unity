@@ -12653,6 +12653,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1775511487}
   - component: {fileID: 1775511486}
+  - component: {fileID: 1775511489}
+  - component: {fileID: 1775511488}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -12699,6 +12701,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1775511488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775511485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53999b27b19014a2db3e76e67dcae245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndFreezeObstacle:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1775511489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775511485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e9258eac1a4e9285417067fc9ae1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftPointX: 2
+  rightPointX: 2
+  speed: 2
+  EndFreezeEnemy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1837308203
 PrefabInstance:
   m_ObjectHideFlags: 0
