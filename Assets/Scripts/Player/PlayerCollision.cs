@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class PlayerCollision : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameManager.instance.IncrementLives();
+        else if (other.CompareTag("Trophy"))
+        {
+            Debug.Log("Player touched the trophy! Loading next scene...");
+            Destroy(other.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
