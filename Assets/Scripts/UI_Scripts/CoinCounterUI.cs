@@ -5,28 +5,28 @@ using System.Collections;
 
 public class CoinCounterUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI current;               // Displayed score
-    [SerializeField] private TextMeshProUGUI toUpdate;              // Animated score
-    [SerializeField] private Transform coinTextContainer;           // The whole text container
-    [SerializeField] private float duration = 0.3f;                 // Duration of animation
-    [SerializeField] private float moveOffset = 30f;               // How much it moves upward
-    [SerializeField] private Ease animationCurve = Ease.OutQuad;   // DOTween ease
+    [SerializeField] private TextMeshProUGUI current;
+    [SerializeField] private TextMeshProUGUI toUpdate;
+    [SerializeField] private Transform scoreTextContainer;
+    [SerializeField] private float duration;
+    [SerializeField] private Ease AnimationCurve;
 
-    private float initialY;
-
+    private float containerInitPosition;
+    private float moveAmount;
     private void Start()
     {
-        // Store the starting Y position for resetting later
-        initialY = coinTextContainer.localPosition.y;
+        Canvas.ForceUpdateCanvases();
+        current.SetText("0");
+        toUpdate.SetText("0");
+        containerInitPosition = scoreTextContainer.localPosition.y;
+        moveAmount = current.rectTransform.rect.height;
     }
 
     public void UpdateScore(int score)
     {
         toUpdate.SetText($"{score}");
 
-        // Animate movement upwards with ease
-        coinTextContainer.DOLocalMoveY(initialY + moveOffset, duration)
-                         .SetEase(animationCurve);
+        scoreTextContainer.DOLocalMoveY(containerInitPosition + moveAmount, duration).SetEase(AnimationCurve);
 
         // Reset after animation
         StartCoroutine(ResetCoinContainer(score));
@@ -40,7 +40,7 @@ public class CoinCounterUI : MonoBehaviour
         current.SetText($"{score}");
 
         // Reset the container’s position
-        Vector3 pos = coinTextContainer.localPosition;
-        coinTextContainer.localPosition = new Vector3(pos.x, initialY, pos.z);
+        Vector3 localPosition = scoreTextContainer.localPosition;
+        scoreTextContainer.localPosition = new Vector3(localPosition.x, containerInitPosition, localPosition.z);
     }
 }
