@@ -5,7 +5,6 @@ public class BoxController : MonoBehaviour
 {
     private Animator animator;
     [SerializeField] private GameObject brokenBoxPrefab;
-    [SerializeField] private GameManager gameManager;
     private Transform transform;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +15,7 @@ public class BoxController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !animator.GetBool("isHit"))
+        if (collision.gameObject.CompareTag("Player") && !animator.GetBool("isHit") && GameManager.instance.GetDownThrust())
         {
             animator.SetBool("isHit", true);
             Invoke(nameof(BreakBox), 0.5f);

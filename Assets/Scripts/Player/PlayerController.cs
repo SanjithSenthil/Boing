@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour {
         if (!isGrounded) {
             rb2d.AddForce(new Vector2(0, -jumpForce));
             InstantiateCloud();
+            GameManager.instance.SetDownThrust(true);
         }
     }
 
@@ -89,9 +90,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (isGrounded) 
+        if (isGrounded)
+        {
             doubleJump = false;
-
+            GameManager.instance.SetDownThrust(false);
+        }
+            
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
         rb2d.linearVelocity = new Vector2(horizontalInput * maxSpeed, rb2d.linearVelocity.y);

@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +14,17 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int lives = 3;
     private GameObject player;
+    private bool downThrust;
+    
+    public bool GetDownThrust()
+    {
+        return downThrust;
+    }
+
+    public void SetDownThrust(bool flag)
+    {
+        downThrust = flag;
+    }
 
     private void Awake()
     {
