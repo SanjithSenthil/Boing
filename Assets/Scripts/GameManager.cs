@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1f; 
             GameData.finalScore = score;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            StartCoroutine(GameOverTransition());
             Destroy(player);
         }
 
@@ -82,5 +82,10 @@ public class GameManager : MonoBehaviour
         isCooldown = true;
         yield return new WaitForSeconds(1f);
         isCooldown = false;
+    }
+
+    private IEnumerator GameOverTransition() {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 }
