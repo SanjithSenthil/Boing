@@ -1067,7 +1067,11 @@ MonoBehaviour:
   Player: {fileID: 136487110}
   m_speed: 0.1
   minCameraPos: {x: -40, y: -7}
-  maxCameraPos: {x: 76, y: 50}
+  maxCameraPos: {x: 76, y: 55}
+  panDuration: 3
+  returnDuration: 2
+  waitBeforeReturn: 3
+  levelBounds: {fileID: 1022301125}
 --- !u!1 &551884711
 GameObject:
   m_ObjectHideFlags: 0
@@ -14086,6 +14090,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1866439738}
   - component: {fileID: 1866439737}
+  - component: {fileID: 1866439740}
+  - component: {fileID: 1866439739}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -14132,6 +14138,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866439739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866439736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32e9258eac1a4e9285417067fc9ae1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftPointX: 2
+  rightPointX: 2
+  speed: 2
+  EndFreezeEnemy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1866439740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866439736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53999b27b19014a2db3e76e67dcae245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndFreezeObstacle:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1905800291
 GameObject:
   m_ObjectHideFlags: 0
@@ -14430,11 +14469,11 @@ PrefabInstance:
       objectReference: {fileID: 1866439737}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.4
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: 46.3
       objectReference: {fileID: 0}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14479,10 +14518,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 338102341486096100, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1438143046}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
 --- !u!1 &2057365492
 GameObject:
