@@ -43,7 +43,6 @@ public class Timer : MonoBehaviour
     public void PauseTimer()
     {
         timerActive = false;
-        timerText.SetText("Timer paused");
     }
 
     // Update is called once per frame
@@ -67,7 +66,7 @@ public class Timer : MonoBehaviour
         }
 
         if (!(timeLeft - Time.deltaTime > 0)) {
-            timerText.SetText("Time's up!");
+            GameManager.instance.StopGame();
         }
     }
 }

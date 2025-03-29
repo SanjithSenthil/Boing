@@ -120,5 +120,6 @@ public class GameManager : MonoBehaviour
     public void StopGame()
     {
         Debug.Log("Game Over");
+        timer.gameObject.SetActive(false);
     }
 }
