@@ -30,15 +30,7 @@
 
             Cloud = GameObject.Find("Cloud");
             //cloudanim = GameObject.Find("Cloud(Clone)").GetComponent<Animator>();
-
-            // Ensure InputManager reference is valid
-            if (inputManager == null) {
-                inputManager = FindFirstObjectByType<InputManager>();
-                if (inputManager == null) {
-                    Debug.LogError("InputManager not found! Please add an InputManager to the scene.");
-                    return;
-                }
-            }
+            inputManager = FindFirstObjectByType<InputManager>();
 
             // Subscribe to input events
             inputManager.OnJump.AddListener(PerformJump);

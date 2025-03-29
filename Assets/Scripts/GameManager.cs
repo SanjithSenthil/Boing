@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
         UpdateHUD();
         player = GameObject.FindWithTag("Player");
         cameraShake = FindFirstObjectByType<CameraShake>();
@@ -35,7 +36,9 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        GameData.Instance.levelScores[GameData.Instance.currentLevelIndex] = score;
         UpdateScoreUI();
+
     }
 
     public void LoseLife()
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
         if (lives <= 0)
         {
             Time.timeScale = 1f; 
-            GameData.finalScore = score;
+            GameData.Instance.levelScores[GameData.Instance.currentLevelIndex] = score;
             StartCoroutine(GameOverTransition());
             Destroy(player);
             GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);

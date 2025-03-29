@@ -497,7 +497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 389, y: -242}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &924148463
@@ -861,7 +861,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "    Rules\n Left - A\nRight - D\n Down - S\n Jump - Space\n "
+  m_text: "Oh come on, you know the deal.\r\n\r\nBut fine\u2026 here you go:\r\n\r\n<-
+    Move Left \u2014 Press A\r\n-> Move Right \u2014 Press D\r\nJump \u2014 Smash
+    that Spacebar (Maybe more than once)\r\nGround Slam? Dive? Panic button? \u2014
+    Hit S mid-air to drop like a brick.\r\n\r\nCollect coins, avoid spiky hugs, watch
+    the timer and don\u2019t die.\r\n\r\nGood luck, fuzzball.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
   m_sharedMaterial: {fileID: 1102009683558621136, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
@@ -888,15 +892,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 25.75
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -926,7 +930,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -156.83789, y: 0, z: 0, w: -156.83784}
+  m_margin: {x: -90.818726, y: -100.97046, z: -248.54272, w: -363.95667}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
