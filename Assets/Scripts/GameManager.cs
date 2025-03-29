@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int lives = 3;
     private GameObject player;
+    private CameraShake cameraShake;
     private bool isCooldown = false;
 
     private void Awake()
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateHUD();
         player = GameObject.FindWithTag("Player");
+        cameraShake = FindFirstObjectByType<CameraShake>();
     }
 
     public void AddScore(int scoreToAdd)
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         lives--;
         UpdateHearts();
         StartCoroutine(LoseLifeCooldown());
+        cameraShake.StartShake();
 
         if (lives <= 0)
         {
