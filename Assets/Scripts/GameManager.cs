@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
         UpdateHUD();
         player = GameObject.FindWithTag("Player");
         cameraShake = FindFirstObjectByType<CameraShake>();
