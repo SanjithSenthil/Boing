@@ -1413,9 +1413,9 @@ MonoBehaviour:
   m_speed: 0.1
   minCameraPos: {x: -9, y: -6}
   maxCameraPos: {x: 51, y: 58}
-  panDuration: 3
+  panDuration: 5
   returnDuration: 2
-  waitBeforeReturn: 3
+  waitBeforeReturn: 0.25
   levelBounds: {fileID: 1022301125}
 --- !u!4 &532977552 stripped
 Transform:
