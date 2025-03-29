@@ -1,121 +1,139 @@
-﻿    using UnityEngine;
-    using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 
-    public class PlayerController : MonoBehaviour {
-        
-        public float maxSpeed = 6f;
-        public float jumpForce = 1000f;
-        public Transform groundCheck;
-        public LayerMask whatIsGround;
+public class PlayerController : MonoBehaviour
+{
 
-        [HideInInspector]
-        public bool lookingRight = true;
-        bool doubleJump = false;
-        public GameObject Boost;
-        
-        private Animator cloudanim;
-        public GameObject Cloud;
+    public float maxSpeed = 6f;
+    public float jumpForce = 1000f;
+    public Transform groundCheck;
+    public LayerMask whatIsGround;
 
-        private Rigidbody2D rb2d;
-        private Animator anim;
-        private bool isGrounded = false;
-        private float horizontalInput = 0f;
-        [SerializeField] private InputManager inputManager;
+    [HideInInspector]
+    public bool lookingRight = true;
+    bool doubleJump = false;
+    public GameObject Boost;
 
-        // Use this for initialization
-        void Start () {
-            rb2d = GetComponent<Rigidbody2D>();
-            anim = GetComponent<Animator>();
-            //cloudanim = GetComponent<Animator>();
+    private Animator cloudanim;
+    public GameObject Cloud;
 
-            Cloud = GameObject.Find("Cloud");
-            //cloudanim = GameObject.Find("Cloud(Clone)").GetComponent<Animator>();
+    private Rigidbody2D rb2d;
+    private Animator anim;
+    private bool isGrounded = false;
+    private float horizontalInput = 0f;
+    [SerializeField] private InputManager inputManager;
 
-            // Ensure InputManager reference is valid
-            if (inputManager == null) {
-                inputManager = FindFirstObjectByType<InputManager>();
-                if (inputManager == null) {
-                    Debug.LogError("InputManager not found! Please add an InputManager to the scene.");
-                    return;
-                }
-            }
+    // Use this for initialization
+    void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        //cloudanim = GetComponent<Animator>();
 
-            // Subscribe to input events
-            inputManager.OnJump.AddListener(PerformJump);
-            inputManager.OnMoveHorizontal.AddListener(HandleMovement);
-            inputManager.OnDownThrust.AddListener(PerformDownThrust);
-        }
+        Cloud = GameObject.Find("Cloud");
+        //cloudanim = GameObject.Find("Cloud(Clone)").GetComponent<Animator>();
 
-        void OnDestroy() {
-            // Unsubscribe from events when destroyed
-            if (inputManager != null) {
-                inputManager.OnJump.RemoveListener(PerformJump);
-                inputManager.OnMoveHorizontal.RemoveListener(HandleMovement);
-                inputManager.OnDownThrust.RemoveListener(PerformDownThrust);
+        // Ensure InputManager reference is valid
+        if (inputManager == null)
+        {
+            inputManager = FindFirstObjectByType<InputManager>();
+            if (inputManager == null)
+            {
+                Debug.LogError("InputManager not found! Please add an InputManager to the scene.");
+                return;
             }
         }
 
-        void HandleMovement(float horizontalValue) {
-            horizontalInput = horizontalValue;
-        }
+        // Subscribe to input events
+        inputManager.OnJump.AddListener(PerformJump);
+        inputManager.OnMoveHorizontal.AddListener(HandleMovement);
+        inputManager.OnDownThrust.AddListener(PerformDownThrust);
+    }
 
-        void OnCollisionEnter2D(Collision2D collision2D) {
-            if (collision2D.relativeVelocity.magnitude > 20) {
+    void OnDestroy()
+    {
+        // Unsubscribe from events when destroyed
+        if (inputManager != null)
+        {
+            inputManager.OnJump.RemoveListener(PerformJump);
+            inputManager.OnMoveHorizontal.RemoveListener(HandleMovement);
+            inputManager.OnDownThrust.RemoveListener(PerformDownThrust);
+        }
+    }
+
+    void HandleMovement(float horizontalValue)
+    {
+        horizontalInput = horizontalValue;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        if (collision2D.relativeVelocity.magnitude > 20)
+        {
+            InstantiateCloud();
+        }
+    }
+
+    // Helper method to instantiate cloud
+    public void InstantiateCloud()
+    {
+        Boost = Instantiate(Resources.Load("Prefab/Cloud"), transform.position, transform.rotation) as GameObject;
+    }
+
+    void PerformJump()
+    {
+        if (isGrounded || !doubleJump)
+        {
+            rb2d.AddForce(new Vector2(0, jumpForce));
+
+            if (!doubleJump && !isGrounded)
+            {
+                doubleJump = true;
                 InstantiateCloud();
             }
         }
+    }
 
-        void PerformJump() {
-            if (isGrounded || !doubleJump) {
-                rb2d.AddForce(new Vector2(0, jumpForce));
-
-                if (!doubleJump && !isGrounded) {
-                    doubleJump = true;
-                    InstantiateCloud();
-                }
-            }
+    void PerformDownThrust()
+    {
+        if (!isGrounded)
+        {
+            rb2d.AddForce(new Vector2(0, -jumpForce));
+            InstantiateCloud();
+            GameManager.instance.SetDownThrust(true);
         }
+    }
 
-        void PerformDownThrust() {
-            if (!isGrounded) {
-                rb2d.AddForce(new Vector2(0, -jumpForce));
-                InstantiateCloud();
-                GameManager.instance.SetDownThrust(true);
-            }
-        }
-
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         if (isGrounded)
         {
             doubleJump = false;
             GameManager.instance.SetDownThrust(false);
         }
-            
+
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        // Helper method to instantiate cloud
-        private void InstantiateCloud() {
-            Boost = Instantiate(Resources.Load("Prefab/Cloud"), transform.position, transform.rotation) as GameObject;
-        }
 
 
-            anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
-            rb2d.linearVelocity = new Vector2(horizontalInput * maxSpeed, rb2d.linearVelocity.y);
-            
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.15F, whatIsGround);
+        rb2d.linearVelocity = new Vector2(horizontalInput * maxSpeed, rb2d.linearVelocity.y);
 
-            anim.SetBool("IsGrounded", isGrounded);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.15F, whatIsGround);
 
-            if ((horizontalInput > 0 && !lookingRight) || (horizontalInput < 0 && lookingRight))
-                Flip();
-            
-            anim.SetFloat("vSpeed", rb2d.linearVelocity.y);
-        }
-        
-        public void Flip() {
-            lookingRight = !lookingRight;
-            Vector3 myScale = transform.localScale;
-            myScale.x *= -1;
-            transform.localScale = myScale;
-        }
+        anim.SetBool("IsGrounded", isGrounded);
+
+        if ((horizontalInput > 0 && !lookingRight) || (horizontalInput < 0 && lookingRight))
+            Flip();
+
+        anim.SetFloat("vSpeed", rb2d.linearVelocity.y);
     }
+
+    public void Flip()
+    {
+        lookingRight = !lookingRight;
+        Vector3 myScale = transform.localScale;
+        myScale.x *= -1;
+        transform.localScale = myScale;
+    }
+}

@@ -22,6 +22,7 @@ public class Timer : MonoBehaviour
 
     public void ActivateTimer()
     {
+        ResetTimer();
         timerActive = true;
     }
 
@@ -60,12 +61,13 @@ public class Timer : MonoBehaviour
             float seconds = Mathf.FloorToInt(timeLeft % 60);
 
             string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
+            Debug.Log(timeString);
             // Set the text string
             timerText.SetText(timeString);
 
         }
 
-        if (!(timeLeft - Time.deltaTime > 0)) {
+        if ((timeLeft - Time.deltaTime <= 0)) {
             GameManager.instance.StopGame();
         }
     }

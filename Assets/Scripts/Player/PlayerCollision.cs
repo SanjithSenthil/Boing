@@ -41,6 +41,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Destroy(other.gameObject);
             GameManager.instance.IncrementLives();
+        }
         else if (other.CompareTag("Trophy"))
         {
             Debug.Log("Player touched the trophy! Loading next scene...");
