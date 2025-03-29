@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class PlayerCollision : MonoBehaviour
     private Idle idle;
     private bool isFrozen = false;
     public UnityEvent OnFreeze = new UnityEvent();
-
 
     void Start()
     {
@@ -35,6 +35,12 @@ public class PlayerCollision : MonoBehaviour
                 OnFreeze?.Invoke();
                 isFrozen = true;
             }
+        }
+        else if (other.CompareTag("Trophy"))
+        {
+            Debug.Log("Player touched the trophy! Loading next scene...");
+            Destroy(other.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
