@@ -933,7 +933,11 @@ MonoBehaviour:
   Player: {fileID: 136487110}
   m_speed: 0.1
   minCameraPos: {x: -40, y: -7}
-  maxCameraPos: {x: 76, y: 50}
+  maxCameraPos: {x: 76, y: 55}
+  panDuration: 3
+  returnDuration: 2
+  waitBeforeReturn: 3
+  levelBounds: {fileID: 1022301125}
 --- !u!1 &551884711
 GameObject:
   m_ObjectHideFlags: 0
@@ -14587,11 +14591,11 @@ PrefabInstance:
       objectReference: {fileID: 1866439737}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.4
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: 46.3
       objectReference: {fileID: 0}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.z
