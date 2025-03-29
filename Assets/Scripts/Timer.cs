@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ResetTimer();
+        // ResetTimer();
     }
 
     public void ActivateTimer()

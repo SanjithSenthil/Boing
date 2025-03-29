@@ -1177,7 +1177,6 @@ MonoBehaviour:
   score: 0
   lives: 3
   FreezeIndicator: {fileID: 1504397635}
-  timer: {fileID: 1279237340}
 --- !u!4 &260886575
 Transform:
   m_ObjectHideFlags: 0
@@ -15602,7 +15601,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1279237339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102fef871dc7a10429ecb97d2ceff6be, type: 3}
+  m_Script: {fileID: 11500000, guid: 84de1ccb62c514b9f81fce78fe971f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeAmount: 60

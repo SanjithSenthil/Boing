@@ -733,7 +733,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 266384974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 102fef871dc7a10429ecb97d2ceff6be, type: 3}
+  m_Script: {fileID: 11500000, guid: 84de1ccb62c514b9f81fce78fe971f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeAmount: 60
@@ -2079,7 +2079,6 @@ MonoBehaviour:
   score: 0
   lives: 3
   FreezeIndicator: {fileID: 1731009043}
-  timer: {fileID: 266384975}
 --- !u!1001 &881412683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13554,7 +13553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.88
+      value: 28.8
       objectReference: {fileID: 0}
     - target: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: m_LocalPosition.y

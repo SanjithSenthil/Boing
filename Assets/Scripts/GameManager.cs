@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image FreezeIndicator;
 
     [Header("Timer Mechanics")]
-    [SerializeField] private Timer timer;
+    private Timer timer;
 
     public bool GetDownThrust()
     {
@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         playerCollision = FindFirstObjectByType<PlayerCollision>();
         playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
+        timer = FindFirstObjectByType<Timer>();
         timer.enabled = true;
         timer.ActivateTimer();
     }
