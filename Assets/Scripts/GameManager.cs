@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private CoinCounterUI coinCounter;
-    [SerializeField] private GameObject[] lifeHearts;
+    [SerializeField] private List<GameObject> lifeHearts;
 
     [Header("Player Stats")]
     public int score = 0;
@@ -63,6 +64,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void IncrementLives()
+    {
+        lives++;
+        UpdateHearts();
+    }
+
     private void UpdateHUD()
     {
         UpdateScoreUI();
@@ -77,9 +84,9 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHearts()
     {
-        if (lifeHearts == null || lifeHearts.Length == 0) return;
+        if (lifeHearts == null || lifeHearts.Count == 0) return;
 
-        for (int i = 0; i < lifeHearts.Length; i++)
+        for (int i = 0; i < lifeHearts.Count; i++)
         {
             lifeHearts[i].SetActive(i < lives);
         }

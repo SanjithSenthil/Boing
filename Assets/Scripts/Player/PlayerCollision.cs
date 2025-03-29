@@ -9,7 +9,6 @@ public class PlayerCollision : MonoBehaviour
     private bool isFrozen = false;
     public UnityEvent OnFreeze = new UnityEvent();
 
-
     void Start()
     {
         patrol = FindFirstObjectByType<Patrol>();
@@ -35,6 +34,12 @@ public class PlayerCollision : MonoBehaviour
                 OnFreeze?.Invoke();
                 isFrozen = true;
             }
+        }
+
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            Destroy(other.gameObject);
+            GameManager.instance.IncrementLives();
         }
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - Snowflake
   - BrokenBox
   - Box
+  - Heart
   layers:
   - Default
   - TransparentFX

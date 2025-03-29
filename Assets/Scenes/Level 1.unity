@@ -11355,7 +11355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenBoxPrefab: {fileID: 2547827385597534958, guid: 2ef95b26d7c371249b4fc94072a3e37f, type: 3}
-  gameManager: {fileID: 0}
+  itemPrefab: {fileID: 8629549606396617829, guid: eade0eb80c9141d41ae7390ba0e3ce7a, type: 3}
 --- !u!1001 &1148346403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13398,15 +13398,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3534673120264948205, guid: 3f0ddc85e84d35546b639a4401d7c9a8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.96
+      value: 8.12
       objectReference: {fileID: 0}
     - target: {fileID: 3534673120264948205, guid: 3f0ddc85e84d35546b639a4401d7c9a8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.28
+      value: 7.89
       objectReference: {fileID: 0}
     - target: {fileID: 3534673120264948205, guid: 3f0ddc85e84d35546b639a4401d7c9a8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534673120264948205, guid: 3f0ddc85e84d35546b639a4401d7c9a8, type: 3}
       propertyPath: m_LocalRotation.w
