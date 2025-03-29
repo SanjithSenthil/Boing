@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int lives = 3;
     private GameObject player;
+    private bool isCooldown = false;
 
     private void Awake()
     {
@@ -35,10 +37,11 @@ public class GameManager : MonoBehaviour
 
     public void LoseLife()
     {
-        if (lives <= 0) return;
+        if (isCooldown || lives <= 0) return;
 
         lives--;
         UpdateHearts();
+        StartCoroutine(LoseLifeCooldown());
 
         if (lives <= 0)
         {
@@ -70,5 +73,11 @@ public class GameManager : MonoBehaviour
         {
             lifeHearts[i].SetActive(i < lives);
         }
+    }
+
+    private IEnumerator LoseLifeCooldown() {
+        isCooldown = true;
+        yield return new WaitForSeconds(1f);
+        isCooldown = false;
     }
 }
