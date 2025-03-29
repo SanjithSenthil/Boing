@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        GameData.Instance.levelScores[GameData.Instance.currentLevelIndex] = score;
         UpdateScoreUI();
+
     }
 
     public void LoseLife()
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
         if (lives <= 0)
         {
             Time.timeScale = 1f; 
-            GameData.finalScore = score;
+            GameData.Instance.levelScores[GameData.Instance.currentLevelIndex] = score;
             UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
             Destroy(player);
         }

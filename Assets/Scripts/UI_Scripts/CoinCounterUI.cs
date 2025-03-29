@@ -16,31 +16,30 @@ public class CoinCounterUI : MonoBehaviour
 
     private void Start()
     {
-        // Store the starting Y position for resetting later
         initialY = coinTextContainer.localPosition.y;
+        UpdateDisplayScore();
     }
 
     public void UpdateScore(int score)
     {
+        // Update GameData
         toUpdate.SetText($"{score}");
-
-        // Animate movement upwards with ease
         coinTextContainer.DOLocalMoveY(initialY + moveOffset, duration)
-                         .SetEase(animationCurve);
+                     .SetEase(animationCurve);
 
-        // Reset after animation
-        StartCoroutine(ResetCoinContainer(score));
+        StartCoroutine(ResetCoinContainer());
     }
 
-    private IEnumerator ResetCoinContainer(int score)
+    private IEnumerator ResetCoinContainer()
     {
         yield return new WaitForSeconds(duration);
 
-        // Update the actual displayed score
-        current.SetText($"{score}");
+        UpdateDisplayScore();
+        coinTextContainer.localPosition = new Vector3(coinTextContainer.localPosition.x, initialY, coinTextContainer.localPosition.z);
+    }
 
-        // Reset the container’s position
-        Vector3 pos = coinTextContainer.localPosition;
-        coinTextContainer.localPosition = new Vector3(pos.x, initialY, pos.z);
+    private void UpdateDisplayScore()
+    {
+        current.SetText($"{GameData.Instance.levelScores[GameData.Instance.currentLevelIndex]}");
     }
 }
