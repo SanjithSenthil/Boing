@@ -10,17 +10,14 @@ using System;
 public class Timer : MonoBehaviour
 {
     private bool timerActive;
-    private float timeLeft;
+    [SerializeField] private float timeAmount;
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameManager manager;
+    private float timeLeft;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeLeft = 15f + 5*Time.deltaTime;
-        timerActive = false;
-        manager.startTimer.AddListener(ActivateTimer);
-        manager.resetTimer.AddListener(ResetTimer);
-        manager.pauseTimer.AddListener(PauseTimer);
+        ResetTimer();
     }
 
     public void ActivateTimer()
@@ -30,7 +27,7 @@ public class Timer : MonoBehaviour
 
     public void ResetTimer()
     {
-        timeLeft = 15f + 5 * Time.deltaTime;
+        timeLeft = timeAmount + 5 * Time.deltaTime;
         timerActive = false;
 
         // Divide the time by 60

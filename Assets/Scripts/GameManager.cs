@@ -22,7 +22,10 @@ public class GameManager : MonoBehaviour
     [Header("FreezeMechanics")]
     private PlayerCollision playerCollision;
     [SerializeField] private Image FreezeIndicator;
-    
+
+    [Header("Timer Mechanics")]
+    [SerializeField] private Timer timer;
+
     public bool GetDownThrust()
     {
         return downThrust;
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
         playerCollision = FindFirstObjectByType<PlayerCollision>();
         playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
+        timer.ActivateTimer();
     }
 
     public void ToggleFreeze()
@@ -111,5 +115,10 @@ public class GameManager : MonoBehaviour
         {
             lifeHearts[i].SetActive(i < lives);
         }
+    }
+
+    public void StopGame()
+    {
+        Debug.Log("Game Over");
     }
 }
