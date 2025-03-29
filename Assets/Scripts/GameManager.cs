@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private CoinCounterUI coinCounter;
     [SerializeField] private GameObject[] lifeHearts;
+    [SerializeField] GameObject explosion;
 
     [Header("Player Stats")]
     public int score = 0;
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour
             GameData.finalScore = score;
             StartCoroutine(GameOverTransition());
             Destroy(player);
+            GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);
+            Destroy(effect, 1.5f);
         }
 
     }

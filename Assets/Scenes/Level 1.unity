@@ -1430,6 +1430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5898777a008f43dfaa1f954fa612e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeDuration: 0.3
+  shakeMagnitude: 0.6
 --- !u!4 &532977552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7093373038090759094, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
@@ -2059,6 +2061,7 @@ MonoBehaviour:
   - {fileID: 1610256101}
   - {fileID: 334072914}
   - {fileID: 2028567384}
+  explosion: {fileID: 7163662739374585097, guid: b363985815cb44bd39de2d813b176937, type: 3}
   score: 0
   lives: 3
 --- !u!1 &1022301124
