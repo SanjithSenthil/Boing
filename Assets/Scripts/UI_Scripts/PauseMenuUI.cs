@@ -6,7 +6,7 @@ public class PauseMenuUI : MonoBehaviour
     public static bool isPaused = false;
 
     [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameObject dimOverlay; // ✅ Add this to manage the dim overlay
+    [SerializeField] private GameObject dimOverlay; 
     [SerializeField] private InstructionsUI instructionsUI;
     private InputManager inputManager;
 
@@ -19,7 +19,7 @@ public class PauseMenuUI : MonoBehaviour
 
         pausePanel.SetActive(false);
         instructionsUI.HideInstructions();
-        dimOverlay.SetActive(false); // Ensure the overlay is hidden at start
+        dimOverlay.SetActive(false); 
     }
 
     private void TogglePause()
@@ -34,7 +34,7 @@ public class PauseMenuUI : MonoBehaviour
     {
         instructionsUI.HideInstructions();
         pausePanel.SetActive(false);
-        dimOverlay.SetActive(false); // ✅ Hide dim overlay
+        dimOverlay.SetActive(false); 
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -43,7 +43,7 @@ public class PauseMenuUI : MonoBehaviour
     {
         instructionsUI.HideInstructions();
         pausePanel.SetActive(true);
-        dimOverlay.SetActive(true); // ✅ Show dim overlay
+        dimOverlay.SetActive(true); 
         Time.timeScale = 0f;
         isPaused = true;
     }
@@ -52,13 +52,13 @@ public class PauseMenuUI : MonoBehaviour
     {
         pausePanel.SetActive(false);
         instructionsUI.ShowInstructions();
-        dimOverlay.SetActive(true); // ✅ Ensure the dim overlay is active
+        dimOverlay.SetActive(true);
     }
 
     public void ShowPausePanel()
     {
         pausePanel.SetActive(true);
-        dimOverlay.SetActive(true); // ✅ Ensure the dim overlay is active
+        dimOverlay.SetActive(true);
     }
 
     public void GoToMainMenu()
