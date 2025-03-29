@@ -1,47 +1,42 @@
-﻿using UnityEngine;
+
+using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
+        public float maxSpeed = 6f;
+        public float jumpForce = 1000f;
+        public Transform groundCheck;
+        public LayerMask whatIsGround;
 
-    public float maxSpeed = 6f;
-    public float jumpForce = 1000f;
-    public Transform groundCheck;
-    public LayerMask whatIsGround;
+        [HideInInspector]
+        public bool lookingRight = true;
+        bool doubleJump = false;
+        public GameObject Boost;
+        
+        private Animator cloudanim;
+        public GameObject Cloud;
 
-    [HideInInspector]
-    public bool lookingRight = true;
-    bool doubleJump = false;
-    public GameObject Boost;
+        private Rigidbody2D rb2d;
+        private Animator anim;
+        private bool isGrounded = false;
+        private float horizontalInput = 0f;
+        [SerializeField] private InputManager inputManager;
 
-    private Animator cloudanim;
-    public GameObject Cloud;
+        // Use this for initialization
+        void Start () {
+            rb2d = GetComponent<Rigidbody2D>();
+            anim = GetComponent<Animator>();
+            //cloudanim = GetComponent<Animator>();
 
-    private Rigidbody2D rb2d;
-    private Animator anim;
-    private bool isGrounded = false;
-    private float horizontalInput = 0f;
-    [SerializeField] private InputManager inputManager;
-
-    // Use this for initialization
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        //cloudanim = GetComponent<Animator>();
-
-        Cloud = GameObject.Find("Cloud");
-        //cloudanim = GameObject.Find("Cloud(Clone)").GetComponent<Animator>();
-
-        // Ensure InputManager reference is valid
-        if (inputManager == null)
-        {
+            Cloud = GameObject.Find("Cloud");
+            //cloudanim = GameObject.Find("Cloud(Clone)").GetComponent<Animator>();
             inputManager = FindFirstObjectByType<InputManager>();
-            if (inputManager == null)
-            {
-                Debug.LogError("InputManager not found! Please add an InputManager to the scene.");
-                return;
-            }
+
+            // Subscribe to input events
+            inputManager.OnJump.AddListener(PerformJump);
+            inputManager.OnMoveHorizontal.AddListener(HandleMovement);
+            inputManager.OnDownThrust.AddListener(PerformDownThrust);
+
         }
 
         // Subscribe to input events

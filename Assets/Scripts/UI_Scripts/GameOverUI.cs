@@ -8,7 +8,8 @@ public class GameOverUI : MonoBehaviour
 
     void Start()
     {
-        finalScoreText.text = $"FINAL SCORE: {GameData.finalScore}";
+        int totalScore = GameData.Instance.TotalScore();
+        finalScoreText.text = $"FINAL SCORE: {totalScore}";
     }
 
 
@@ -16,6 +17,7 @@ public class GameOverUI : MonoBehaviour
     {
         Debug.Log("Restart button clicked!");
         Time.timeScale = 1f;
+        GameData.Instance.levelScores = new int[2]; // Reset 
         SceneManager.LoadScene("Level 1"); 
     }
 
@@ -24,5 +26,6 @@ public class GameOverUI : MonoBehaviour
         Debug.Log("GoToMainMenu button clicked!");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); 
+        GameData.Instance.levelScores = new int[2]; // Reset
     }
 }

@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private CoinCounterUI coinCounter;
-    [SerializeField] private List<GameObject> lifeHearts;
+    [SerializeField] private GameObject[] lifeHearts;
+    [SerializeField] GameObject explosion;
+
 
     [Header("Player Stats")]
     public int score = 0;
@@ -35,7 +37,9 @@ public class GameManager : MonoBehaviour
     {
         downThrust = flag;
     }
-
+    
+    private CameraShake cameraShake;
+    private bool isCooldown = false;
     private void Awake()
     {
         if (instance == null)
@@ -46,6 +50,8 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
+        cameraShake = FindFirstObjectByType<CameraShake>();
         UpdateHUD();
         FreezeIndicator.enabled = false;
         playerCollision = FindFirstObjectByType<PlayerCollision>();
@@ -71,22 +77,28 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
+        GameData.Instance.levelScores[GameData.Instance.currentLevelIndex] = score;
         UpdateScoreUI();
+
     }
 
     public void LoseLife()
     {
-        if (lives <= 0) return;
+        if (isCooldown || lives <= 0) return;
 
         lives--;
         UpdateHearts();
+        StartCoroutine(LoseLifeCooldown());
+        cameraShake.StartShake();
 
         if (lives <= 0)
         {
             Time.timeScale = 1f; 
-            GameData.finalScore = score;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            GameData.Instance.levelScores[GameData.Instance.currentLevelIndex] = score;
+            StartCoroutine(GameOverTransition());
             Destroy(player);
+            GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);
+            Destroy(effect, 1.5f);
         }
 
     }
@@ -124,6 +136,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game Over");
         timer.gameObject.SetActive(false);
         Time.timeScale = 0f;
+    }
 
+    private IEnumerator LoseLifeCooldown() {
+        isCooldown = true;
+        yield return new WaitForSeconds(1f);
+        isCooldown = false;
+    }
+
+    private IEnumerator GameOverTransition() {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 }

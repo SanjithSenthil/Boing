@@ -7,7 +7,7 @@ public class CoinCounterUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI current;
     [SerializeField] private TextMeshProUGUI toUpdate;
-    [SerializeField] private Transform scoreTextContainer;
+    [SerializeField] private Transform coinTextContainer;
     [SerializeField] private float duration;
     [SerializeField] private Ease AnimationCurve;
 
@@ -15,32 +15,33 @@ public class CoinCounterUI : MonoBehaviour
     private float moveAmount;
     private void Start()
     {
-        Canvas.ForceUpdateCanvases();
-        current.SetText("0");
-        toUpdate.SetText("0");
-        containerInitPosition = scoreTextContainer.localPosition.y;
-        moveAmount = current.rectTransform.rect.height;
+        initialY = coinTextContainer.localPosition.y;
+        UpdateDisplayScore();
+
     }
 
     public void UpdateScore(int score)
     {
+        // Update GameData
         toUpdate.SetText($"{score}");
+        coinTextContainer.DOLocalMoveY(initialY + moveOffset, duration)
+                     .SetEase(animationCurve);
 
-        scoreTextContainer.DOLocalMoveY(containerInitPosition + moveAmount, duration).SetEase(AnimationCurve);
 
-        // Reset after animation
-        StartCoroutine(ResetCoinContainer(score));
+        StartCoroutine(ResetCoinContainer());
     }
 
-    private IEnumerator ResetCoinContainer(int score)
+    private IEnumerator ResetCoinContainer()
     {
         yield return new WaitForSeconds(duration);
 
-        // Update the actual displayed score
-        current.SetText($"{score}");
+        UpdateDisplayScore();
+        coinTextContainer.localPosition = new Vector3(coinTextContainer.localPosition.x, initialY, coinTextContainer.localPosition.z);
+    }
 
-        // Reset the container’s position
-        Vector3 localPosition = scoreTextContainer.localPosition;
-        scoreTextContainer.localPosition = new Vector3(localPosition.x, containerInitPosition, localPosition.z);
+
+    private void UpdateDisplayScore()
+    {
+        current.SetText($"{GameData.Instance.levelScores[GameData.Instance.currentLevelIndex]}");
     }
 }
