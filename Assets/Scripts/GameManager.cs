@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,10 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     private GameObject player;
     private bool downThrust;
+
+    [Header("FreezeMechanics")]
+    private PlayerCollision playerCollision;
+    [SerializeField] private Image FreezeIndicator;
     
     public bool GetDownThrust()
     {
@@ -38,7 +44,22 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateHUD();
+        FreezeIndicator.enabled = false;
+        playerCollision = FindFirstObjectByType<PlayerCollision>();
+        playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
+    }
+
+    public void ToggleFreeze()
+    {
+        StartCoroutine(TurnOffFreeze(5f));
+    }
+
+    public IEnumerator TurnOffFreeze(float seconds)
+    {
+        FreezeIndicator.enabled = true;
+        yield return new WaitForSeconds(seconds);
+        FreezeIndicator.enabled = false;
     }
 
     public void AddScore(int scoreToAdd)
