@@ -865,6 +865,7 @@ MonoBehaviour:
   - {fileID: 2065242548}
   - {fileID: 176085638}
   - {fileID: 881946223}
+  explosion: {fileID: 7163662739374585097, guid: b363985815cb44bd39de2d813b176937, type: 3}
   score: 0
   lives: 3
 --- !u!4 &260886575
@@ -971,6 +972,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1072,6 +1074,20 @@ MonoBehaviour:
   returnDuration: 2
   waitBeforeReturn: 0.25
   levelBounds: {fileID: 1022301125}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5898777a008f43dfaa1f954fa612e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.3
+  shakeMagnitude: 0.6
 --- !u!1 &551884711
 GameObject:
   m_ObjectHideFlags: 0

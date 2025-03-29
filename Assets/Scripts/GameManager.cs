@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,11 +8,14 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private CoinCounterUI coinCounter;
     [SerializeField] private GameObject[] lifeHearts;
+    [SerializeField] GameObject explosion;
 
     [Header("Player Stats")]
     public int score = 0;
     public int lives = 3;
     private GameObject player;
+    private CameraShake cameraShake;
+    private bool isCooldown = false;
 
     private void Awake()
     {
@@ -25,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateHUD();
         player = GameObject.FindWithTag("Player");
+        cameraShake = FindFirstObjectByType<CameraShake>();
     }
 
     public void AddScore(int scoreToAdd)
@@ -35,17 +40,21 @@ public class GameManager : MonoBehaviour
 
     public void LoseLife()
     {
-        if (lives <= 0) return;
+        if (isCooldown || lives <= 0) return;
 
         lives--;
         UpdateHearts();
+        StartCoroutine(LoseLifeCooldown());
+        cameraShake.StartShake();
 
         if (lives <= 0)
         {
             Time.timeScale = 1f; 
             GameData.finalScore = score;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            StartCoroutine(GameOverTransition());
             Destroy(player);
+            GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);
+            Destroy(effect, 1.5f);
         }
 
     }
@@ -70,5 +79,16 @@ public class GameManager : MonoBehaviour
         {
             lifeHearts[i].SetActive(i < lives);
         }
+    }
+
+    private IEnumerator LoseLifeCooldown() {
+        isCooldown = true;
+        yield return new WaitForSeconds(1f);
+        isCooldown = false;
+    }
+
+    private IEnumerator GameOverTransition() {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 }
