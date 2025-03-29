@@ -44,13 +44,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Start()
+    public void Start()
     {
         UpdateHUD();
         FreezeIndicator.enabled = false;
         playerCollision = FindFirstObjectByType<PlayerCollision>();
         playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
+        timer.enabled = true;
         timer.ActivateTimer();
     }
 
@@ -121,5 +122,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game Over");
         timer.gameObject.SetActive(false);
+        Time.timeScale = 0f;
+
     }
 }
