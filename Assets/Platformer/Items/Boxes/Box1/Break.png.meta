@@ -151,12 +151,12 @@ TextureImporter:
       name: Break_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 8
-        width: 11
-        height: 10
+        x: 6
+        y: 5
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -173,12 +173,12 @@ TextureImporter:
       name: Break_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 8
-        width: 13
-        height: 10
+        x: 34
+        y: 5
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Break_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 7
-        width: 14
-        height: 11
+        x: 62
+        y: 4
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: Break_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 7
-        width: 10
-        height: 11
+        x: 90
+        y: 4
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b7d1635a3b5935848a4fdbde977521f3
     internalID: 0
     vertices: []
     indices: 

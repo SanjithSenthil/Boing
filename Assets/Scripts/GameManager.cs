@@ -1,4 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +21,24 @@ public class GameManager : MonoBehaviour
     private CameraShake cameraShake;
     private bool isCooldown = false;
 
+
+    [Header("Box break mechanics")]
+    private bool downThrust;
+
+    [Header("Freeze Mechanics")]
+    private PlayerCollision playerCollision;
+    [SerializeField] private Image FreezeIndicator;
+
+    public bool GetDownThrust()
+    {
+        return downThrust;
+    }
+
+    public void SetDownThrust(bool flag)
+    {
+        downThrust = flag;
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -25,12 +47,29 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    
+
     private void Start()
     {
         score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
         UpdateHUD();
+        FreezeIndicator.enabled = false;
+        playerCollision = FindFirstObjectByType<PlayerCollision>();
+        playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
         cameraShake = FindFirstObjectByType<CameraShake>();
+    }
+
+    public void ToggleFreeze()
+    {
+        StartCoroutine(TurnOffFreeze(5f));
+    }
+
+    public IEnumerator TurnOffFreeze(float seconds)
+    {
+        FreezeIndicator.enabled = true;
+        yield return new WaitForSeconds(seconds);
+        FreezeIndicator.enabled = false;
     }
 
     public void AddScore(int scoreToAdd)
@@ -41,6 +80,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void IncrementLives()
+    {
+        lives++;
+        UpdateHearts();
+    }
     public void LoseLife()
     {
         if (isCooldown || lives <= 0) return;
