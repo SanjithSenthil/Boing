@@ -174,4 +174,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   hitSound: {fileID: 8300000, guid: 4421faed9faa49e4190233e01e45338f, type: 3}
-  soundVolume: 1
+  soundVolume: 4
