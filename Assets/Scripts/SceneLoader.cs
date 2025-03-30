@@ -91,7 +91,7 @@ public class SceneLoader : MonoBehaviour
         isTransitioning = false;
         */
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.45f);
 
         // Load the next scene asynchronously so it loads in the background while the transition animation is happening
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
