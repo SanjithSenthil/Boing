@@ -163,3 +163,5 @@ MonoBehaviour:
   EndFreezeObstacle:
     m_PersistentCalls:
       m_Calls: []
+  hitSound: {fileID: 8300000, guid: 90fc205a479431345812f2b6974d9399, type: 3}
+  soundVolume: 1
