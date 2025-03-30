@@ -13,8 +13,10 @@ public class AudioManager : MonoBehaviour
 
     [Header("Settings")]
     [Range(0f, 1f)] public float musicVolume = 0.7f;
+    [Range(0f, 1f)] public float sfxVolume = 1.0f;
 
     private AudioSource audioSource;
+    private AudioSource sfxSource;
 
     private void Awake()
     {
@@ -26,6 +28,10 @@ public class AudioManager : MonoBehaviour
             audioSource.loop = true;
             audioSource.playOnAwake = false;
             audioSource.volume = musicVolume;
+
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            sfxSource.playOnAwake = false;
+            sfxSource.volume = sfxVolume;
 
         }
         else
@@ -80,14 +86,21 @@ public class AudioManager : MonoBehaviour
             audioSource.volume = musicVolume;
         }
     }
-    // private void OnEnable()
-    // {
-    //     SceneManager.sceneLoaded += OnSceneLoaded;
-    // }
+    public void PlaySFX(AudioClip clip)
+    {
+        if (clip != null && sfxSource != null)
+        {
+            sfxSource.PlayOneShot(clip);
+        }
+    }
 
-    // private void OnDisable()
-    // {
-    //     SceneManager.sceneLoaded -= OnSceneLoaded;
-    // }
+    public void LowerMusicVolume(float volumeMultiplier = 0.3f)
+    {
+        audioSource.volume *= volumeMultiplier; // Reduce volume 
+    }
 
+    public void RestoreMusicVolume()
+    {
+        audioSource.volume = musicVolume; // Restore volume
+    }
 }
