@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     private Idle idle;
     private bool isFrozen = false;
     public UnityEvent OnFreeze = new UnityEvent();
+    private bool isTransitioning = false;
 
     void Start()
     {
@@ -47,7 +48,20 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Player touched the trophy! Loading next scene...");
             Destroy(other.gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            // Check if SceneLoader exists before calling it
+            if (SceneLoader.instance != null)
+            {
+                if (!isTransitioning)
+                {
+                    Debug.Log("Loading next scene...");
+                    SceneLoader.instance.LoadNextScene();
+                }
+            }
+            else
+            {
+                Debug.LogError("SceneLoader instance is missing!");
+            }
         }
     }
 
