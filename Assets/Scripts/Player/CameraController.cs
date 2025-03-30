@@ -16,6 +16,9 @@ public class CameraController : MonoBehaviour
 	private Vector3 originalPosition;
 	private bool isPanning = false;
 
+	[Header("Sound Effects")]
+    [SerializeField] private AudioClip panSound; 
+
 	public void Start()
 	{
 		mycam = GetComponent<Camera>();
@@ -26,6 +29,7 @@ public class CameraController : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.C) && !isPanning)
 		{
+			PlaySound(panSound);
 			ShowFullLevel();
 		}
 
@@ -92,6 +96,7 @@ public class CameraController : MonoBehaviour
 
 	IEnumerator ReturnToPlayer()
 {
+	PlaySound(panSound);
     float elapsedTime = 0;
     float xOffset = 10.7f; // Right shift (positive) or Left shift (negative)
     float yOffset = 3f; // Up shift (positive) or Down shift (negative)
@@ -140,4 +145,12 @@ public class CameraController : MonoBehaviour
 		float sizeY = bounds.extents.y - 1;
 		return Mathf.Max(sizeX, sizeY);
 	}
+	private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySFX(clip);
+        }
+    }
 }
+

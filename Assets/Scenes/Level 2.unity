@@ -154,6 +154,7 @@ MonoBehaviour:
   pausePanel: {fileID: 19826862}
   dimOverlay: {fileID: 1242622152}
   instructionsUI: {fileID: 1144632812}
+  uiSound: {fileID: 8300000, guid: 806b44946749fdc4980e824128766e5f, type: 3}
 --- !u!114 &19826864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15747,6 +15748,8 @@ MonoBehaviour:
   EndFreezeEnemy:
     m_PersistentCalls:
       m_Calls: []
+  hitSound: {fileID: 0}
+  soundVolume: 1
 --- !u!114 &1866439740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15762,6 +15765,8 @@ MonoBehaviour:
   EndFreezeObstacle:
     m_PersistentCalls:
       m_Calls: []
+  hitSound: {fileID: 0}
+  soundVolume: 1
 --- !u!114 &1866439741
 MonoBehaviour:
   m_ObjectHideFlags: 0

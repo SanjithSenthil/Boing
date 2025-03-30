@@ -14,6 +14,9 @@ public class Patrol : MonoBehaviour
     private Animator animator;
     private PlayerCollision playerCollision;
     public UnityEvent EndFreezeEnemy = new UnityEvent();
+    [Header("Sound Effects")]
+    public AudioClip hitSound; // Single sound per prefab
+    public float soundVolume = 1.0f;
 
     void Start()
     {
@@ -66,5 +69,14 @@ public class Patrol : MonoBehaviour
         isFrozen = false;
         animator.enabled = true;
         EndFreezeEnemy?.Invoke();
+    }
+    // sound effect when the player collides with the enemy
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player") && hitSound != null)
+        {
+            Debug.Log("Player hit the enemy. Playing sound...");
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, soundVolume);
+        }
     }
 }
