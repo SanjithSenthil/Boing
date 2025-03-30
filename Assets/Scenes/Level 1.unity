@@ -2313,7 +2313,7 @@ MonoBehaviour:
   explosion: {fileID: 7163662739374585097, guid: b363985815cb44bd39de2d813b176937, type: 3}
   score: 0
   lives: 3
-  FreezeIndicator: {fileID: 0}
+  FreezeIndicator: {fileID: 1665496332}
 --- !u!1 &870363390
 GameObject:
   m_ObjectHideFlags: 0
