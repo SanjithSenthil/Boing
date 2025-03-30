@@ -176,3 +176,5 @@ MonoBehaviour:
   EndFreezeEnemy:
     m_PersistentCalls:
       m_Calls: []
+  hitSound: {fileID: 8300000, guid: ce1e57d5f10f923479459ef37b8bcb7d, type: 3}
+  soundVolume: 1
