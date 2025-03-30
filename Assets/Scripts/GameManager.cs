@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     private PlayerCollision playerCollision;
     [SerializeField] private Image FreezeIndicator;
 
+    [Header("Timer Mechanics")]
+    private Timer timer;
+
     public bool GetDownThrust()
     {
         return downThrust;
@@ -58,6 +61,8 @@ public class GameManager : MonoBehaviour
         playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
         cameraShake = FindFirstObjectByType<CameraShake>();
+        timer = FindFirstObjectByType<Timer>();
+        timer.ActivateTimer();
     }
 
     public void ToggleFreeze()

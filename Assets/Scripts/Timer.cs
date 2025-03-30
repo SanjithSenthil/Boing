@@ -11,16 +11,13 @@ public class Timer : MonoBehaviour
 {
     private bool timerActive;
     private float timeLeft;
+    [SerializeField] private float timeAllocated;
     [SerializeField] private TextMeshProUGUI timerText;
-    [SerializeField] private GameManager manager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeLeft = 15f + 5*Time.deltaTime;
+        ResetTimer();
         timerActive = false;
-        manager.startTimer.AddListener(ActivateTimer);
-        manager.resetTimer.AddListener(ResetTimer);
-        manager.pauseTimer.AddListener(PauseTimer);
     }
 
     public void ActivateTimer()
@@ -30,7 +27,7 @@ public class Timer : MonoBehaviour
 
     public void ResetTimer()
     {
-        timeLeft = 15f + 5 * Time.deltaTime;
+        timeLeft = timeAllocated + 3 * Time.deltaTime;
         timerActive = false;
 
         // Divide the time by 60
