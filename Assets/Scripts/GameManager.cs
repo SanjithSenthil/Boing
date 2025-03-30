@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    private void Start()
+    public void Start()
     {
         score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
         UpdateHUD();
@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         cameraShake = FindFirstObjectByType<CameraShake>();
         timer = FindFirstObjectByType<Timer>();
+        timer.enabled = true;
         timer.ActivateTimer();
     }
 

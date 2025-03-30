@@ -16,12 +16,12 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        ResetTimer();
-        timerActive = false;
+
     }
 
     public void ActivateTimer()
     {
+        ResetTimer();
         timerActive = true;
     }
 
@@ -43,7 +43,6 @@ public class Timer : MonoBehaviour
     public void PauseTimer()
     {
         timerActive = false;
-        timerText.SetText("Timer paused");
     }
 
     // Update is called once per frame
@@ -64,10 +63,6 @@ public class Timer : MonoBehaviour
             // Set the text string
             timerText.SetText(timeString);
 
-        }
-
-        if (!(timeLeft - Time.deltaTime > 0)) {
-            timerText.SetText("Time's up!");
         }
     }
 }
