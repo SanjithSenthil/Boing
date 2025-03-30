@@ -36,7 +36,14 @@ public class PlayerCollision : MonoBehaviour
                 isFrozen = true;
             }
         }
-        else if (other.CompareTag("Trophy"))
+
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            Destroy(other.gameObject);
+            GameManager.instance.IncrementLives();
+        }
+
+        if (other.CompareTag("Trophy"))
         {
             Debug.Log("Player touched the trophy! Loading next scene...");
             Destroy(other.gameObject);

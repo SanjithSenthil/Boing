@@ -30,15 +30,7 @@
 
             Cloud = GameObject.Find("Cloud");
             //cloudanim = GameObject.Find("Cloud(Clone)").GetComponent<Animator>();
-
-            // Ensure InputManager reference is valid
-            if (inputManager == null) {
-                inputManager = FindFirstObjectByType<InputManager>();
-                if (inputManager == null) {
-                    Debug.LogError("InputManager not found! Please add an InputManager to the scene.");
-                    return;
-                }
-            }
+            inputManager = FindFirstObjectByType<InputManager>();
 
             // Subscribe to input events
             inputManager.OnJump.AddListener(PerformJump);
@@ -80,6 +72,7 @@
             if (!isGrounded) {
                 rb2d.AddForce(new Vector2(0, -jumpForce));
                 InstantiateCloud();
+                GameManager.instance.SetDownThrust(true);
             }
         }
 
@@ -89,8 +82,12 @@
         }
 
         void FixedUpdate() {
-            if (isGrounded) 
-                doubleJump = false;
+            if (isGrounded)
+        {
+            doubleJump = false;
+            GameManager.instance.SetDownThrust(false);
+        }
+                
 
             anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
