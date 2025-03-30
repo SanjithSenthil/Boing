@@ -8,6 +8,7 @@ TagManager:
   - Snowflake
   - Trophy
   - Box
+  - Heart
   layers:
   - Default
   - TransparentFX
