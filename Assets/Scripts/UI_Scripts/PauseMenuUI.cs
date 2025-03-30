@@ -78,11 +78,21 @@ public class PauseMenuUI : MonoBehaviour
     {
         PlayUISound();
         Time.timeScale = 1f;
+        //SceneManager.LoadScene("MainMenu");
+
+        // Check if SceneLoader instance exists and call LoadNextScene
+        if (SceneLoader.instance != null)
+        {
+            SceneLoader.instance.LoadSceneByName("MainMenu"); // This will load the next scene (e.g., MainMenu)
+        }
+        else
+        {
+            Debug.LogError("SceneLoader instance is missing!");
+        }
         if (AudioManager.instance != null)
         {
             AudioManager.instance.RestoreMusicVolume(); 
         }
-        SceneManager.LoadScene("MainMenu");
     }
     public void PlayUISound()
     {
