@@ -51,12 +51,12 @@ public class BoxController : MonoBehaviour
             GameObject item = Instantiate(itemPrefab, transform.localPosition + new Vector3(1f, 0, 0), Quaternion.identity);
             if (itemPrefab.CompareTag("Heart"))
             {
-                item.transform.localScale = item.transform.localScale * 0.35f;
+                item.transform.localScale = item.transform.localScale * 0.3f;
             }
 
             if (itemPrefab.CompareTag("Snowflake"))
             {
-                item.transform.localScale = item.transform.localScale * 0.2f;
+                item.transform.localScale = item.transform.localScale * 0.25f;
             }
             item.AddComponent<Rigidbody2D>();
             Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
