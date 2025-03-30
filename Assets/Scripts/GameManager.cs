@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+
+
     private void Start()
     {
         score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
