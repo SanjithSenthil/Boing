@@ -871,6 +871,7 @@ MonoBehaviour:
   explosion: {fileID: 7163662739374585097, guid: b363985815cb44bd39de2d813b176937, type: 3}
   score: 0
   lives: 3
+  FreezeIndicator: {fileID: 0}
 --- !u!4 &260886575
 Transform:
   m_ObjectHideFlags: 0
@@ -1077,6 +1078,7 @@ MonoBehaviour:
   returnDuration: 2
   waitBeforeReturn: 0.25
   levelBounds: {fileID: 1022301125}
+  panSound: {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15684,6 +15686,7 @@ GameObject:
   - component: {fileID: 1866439740}
   - component: {fileID: 1866439739}
   - component: {fileID: 1866439741}
+  - component: {fileID: 1866439742}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -15781,6 +15784,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelScores: 0000000000000000
   currentLevelIndex: 0
+--- !u!95 &1866439742
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866439736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1905800291
 GameObject:
   m_ObjectHideFlags: 0
