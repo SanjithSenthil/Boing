@@ -17,6 +17,20 @@ public class GameManager : MonoBehaviour
     private CameraShake cameraShake;
     private bool isCooldown = false;
 
+
+    [Header("Box break mechanics")]
+    private bool downThrust;
+
+    public bool GetDownThrust()
+    {
+        return downThrust;
+    }
+
+    public void SetDownThrust(bool flag)
+    {
+        downThrust = flag;
+    }
+
     private void Awake()
     {
         if (instance == null)

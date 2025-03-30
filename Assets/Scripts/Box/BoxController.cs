@@ -16,7 +16,7 @@ public class BoxController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !animator.GetBool("isHit"))
+        if (collision.gameObject.CompareTag("Player") && !animator.GetBool("isHit") && GameManager.instance.GetDownThrust())
         { 
             animator.SetBool("isHit", true);
             Invoke(nameof(BreakBox), 0.5f);

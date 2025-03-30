@@ -72,6 +72,7 @@
             if (!isGrounded) {
                 rb2d.AddForce(new Vector2(0, -jumpForce));
                 InstantiateCloud();
+                GameManager.instance.SetDownThrust(true);
             }
         }
 
@@ -81,8 +82,12 @@
         }
 
         void FixedUpdate() {
-            if (isGrounded) 
-                doubleJump = false;
+            if (isGrounded)
+        {
+            doubleJump = false;
+            GameManager.instance.SetDownThrust(false);
+        }
+                
 
             anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
