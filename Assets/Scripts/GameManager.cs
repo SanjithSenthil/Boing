@@ -112,6 +112,16 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void TimesUP()
+    {
+        timer.enabled = false;
+        StartCoroutine(GameOverTransition());
+        Destroy(player);
+        GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);
+        Destroy(effect, 1.5f);
+
+    }
+
     private void UpdateHUD()
     {
         UpdateScoreUI();

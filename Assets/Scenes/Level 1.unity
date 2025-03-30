@@ -12790,7 +12790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846c23f01340065498c85e6402e88fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAllocated: 60
+  timeAllocated: 10
   timerText: {fileID: 1913520913}
 --- !u!4 &1513833415
 Transform:

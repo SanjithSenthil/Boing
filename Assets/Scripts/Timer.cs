@@ -64,5 +64,10 @@ public class Timer : MonoBehaviour
             timerText.SetText(timeString);
 
         }
+
+        if (timeLeft - Time.deltaTime <= 0)
+        {
+            GameManager.instance.TimesUP();
+        }
     }
 }
