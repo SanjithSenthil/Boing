@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     private PlayerCollision playerCollision;
     [SerializeField] private Image FreezeIndicator;
 
+    [Header("Timer Mechanics")]
+    private Timer timer;
+
     public bool GetDownThrust()
     {
         return downThrust;
@@ -49,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    private void Start()
+    public void Start()
     {
         score = GameData.Instance.levelScores[GameData.Instance.currentLevelIndex];
         UpdateHUD();
@@ -58,6 +61,9 @@ public class GameManager : MonoBehaviour
         playerCollision.OnFreeze.AddListener(ToggleFreeze);
         player = GameObject.FindWithTag("Player");
         cameraShake = FindFirstObjectByType<CameraShake>();
+        timer = FindFirstObjectByType<Timer>();
+        timer.enabled = true;
+        timer.ActivateTimer();
     }
 
     public void ToggleFreeze()
@@ -103,6 +109,16 @@ public class GameManager : MonoBehaviour
             GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);
             Destroy(effect, 1.5f);
         }
+
+    }
+
+    public void TimesUP()
+    {
+        timer.enabled = false;
+        StartCoroutine(GameOverTransition());
+        Destroy(player);
+        GameObject effect = Instantiate(explosion, player.transform.position, Quaternion.identity);
+        Destroy(effect, 1.5f);
 
     }
 
