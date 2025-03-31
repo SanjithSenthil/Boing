@@ -48,7 +48,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Player touched the trophy! Loading next scene...");
             Destroy(other.gameObject);
-            GameData.Instance.timeLeft[GameData.Instance.currentLevelIndex] = GameManager.instance.timer.GetTimeLeft();
+            GameData.Instance.timeLeft[GameData.Instance.currentLevelIndex] += GameManager.instance.timer.GetTimeLeft();
             // Check if SceneLoader exists before calling it
             if (SceneLoader.instance != null)
             {

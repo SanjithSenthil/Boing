@@ -23,7 +23,7 @@ public class GameData : MonoBehaviour
 
     public int TotalScore()
     {
-        return levelScores[0] * (int)timeLeft[0] + levelScores[1] + (int)timeLeft[1];
+        return levelScores[0] + (int)timeLeft[0] + levelScores[1] + (int)timeLeft[1];
     }
 
     public void AddScore(int amount)
