@@ -744,7 +744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &999514154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -865,7 +865,8 @@ MonoBehaviour:
     Move Left \u2014 Press A\r\n-> Move Right \u2014 Press D\r\nJump \u2014 Smash
     that Spacebar (Maybe more than once)\r\nGround Slam? Dive? Panic button? \u2014
     Hit S mid-air to drop like a brick.\r\n\r\nCollect coins, avoid spiky hugs, watch
-    the timer and don\u2019t die.\r\n\r\nGood luck, fuzzball.\r\n"
+    the timer and don\u2019t die. Also, leftover time converts to bonus points!!!\r\n\r\nGood
+    luck, fuzzball.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
   m_sharedMaterial: {fileID: 1102009683558621136, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
@@ -892,7 +893,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.75
+  m_fontSize: 24.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
