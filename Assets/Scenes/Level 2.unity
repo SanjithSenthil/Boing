@@ -184,10 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -15277,10 +15277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -16067,6 +16067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb910189dc8be4dc2a50681c1efd35f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionAnimator: {fileID: 0}
 --- !u!4 &1447255810
 Transform:
   m_ObjectHideFlags: 0
@@ -16734,6 +16735,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3647211262323822282, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
+      propertyPath: idle
+      value: 
+      objectReference: {fileID: 1866439740}
+    - target: {fileID: 3647211262323822282, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
+      propertyPath: patrol
+      value: 
+      objectReference: {fileID: 1866439739}
     - target: {fileID: 4521125648795168853, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: inputManager
       value: 
