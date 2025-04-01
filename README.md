@@ -16,3 +16,5 @@ Sanjith:
 - Coplaced prefabs on level 1 and level 2 of our game environment: https://github.com/SanjithSenthil/Boing/pull/48
 - Prepared the build and uploaded on itch.io: https://github.com/SanjithSenthil/Boing/pull/41
 - Performed various miscellaneous tasks and resolved bugs across different features of the game.
+
+Aadil: I worked on designing the levels towards the beginning of the game jam. I also added the background and the platforms for the levels using tilemaps. I added the start and endpoints for the game and made the player go to the next level on collecting the trophy. I also worked on doing the transition animation between the scenes
