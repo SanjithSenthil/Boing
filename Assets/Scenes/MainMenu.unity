@@ -1490,8 +1490,7 @@ MonoBehaviour:
     Move Left \u2014 Press A\r\n-> Move Right \u2014 Press D\r\nJump \u2014 Smash
     that Spacebar (Maybe more than once)\r\nGround Slam? Dive? Panic button? \u2014
     Hit S mid-air to drop like a brick.\r\n\r\nCollect coins, avoid spiky hugs, watch
-    the timer and don\u2019t die. Also, leftover time converts to bonus points!!!\r\n\r\nGood
-    luck, fuzzball.\r\n"
+    the timer and don\u2019t die.\r\n\r\nGood luck, fuzzball.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
   m_sharedMaterial: {fileID: 1102009683558621136, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
@@ -1518,7 +1517,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.7
+  m_fontSize: 25.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1676,10 +1675,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 960, y: 540}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

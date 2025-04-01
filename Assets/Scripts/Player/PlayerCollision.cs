@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
-    [SerializeField] private Patrol patrol;
-    [SerializeField] private Idle idle;
+    private Patrol patrol;
+    private Idle idle;
     private bool isFrozen = false;
     public UnityEvent OnFreeze = new UnityEvent();
     private bool isTransitioning = false;
 
     void Start()
     {
+        patrol = FindFirstObjectByType<Patrol>();
         patrol.EndFreezeEnemy.AddListener(FinishFreeze);
+        idle = FindFirstObjectByType<Idle>();
         idle.EndFreezeObstacle.AddListener(FinishFreeze);
     }
     
@@ -44,10 +46,9 @@ public class PlayerCollision : MonoBehaviour
 
         if (other.CompareTag("Trophy"))
         {
+            Debug.Log("Player touched the trophy! Loading next scene...");
             Destroy(other.gameObject);
 
-            // add time left as bonus scores:
-            GameManager.instance.AddScore(Mathf.FloorToInt(GameManager.instance.timer.GetTimeLeft()));
             // Check if SceneLoader exists before calling it
             if (SceneLoader.instance != null)
             {

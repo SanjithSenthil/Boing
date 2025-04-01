@@ -604,8 +604,7 @@ MonoBehaviour:
     Move Left \u2014 Press A\r\n-> Move Right \u2014 Press D\r\nJump \u2014 Smash
     that Spacebar (Maybe more than once)\r\nGround Slam? Dive? Panic button? \u2014
     Hit **S** mid-air to drop like a brick.\r\n\r\nCollect coins, avoid spiky hugs,
-    watch the timer and don\u2019t die. Don't forget, leftover time gives bonus points!\r\n\r\nGood
-    luck, fuzzball.\r\n"
+    watch the timer and don\u2019t die.\r\n\r\nGood luck, fuzzball.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
   m_sharedMaterial: {fileID: 1102009683558621136, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
@@ -632,7 +631,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.9
+  m_fontSize: 32.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1932,10 +1931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 960, y: 540}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2261,52 +2260,6 @@ MonoBehaviour:
   duration: 0.3
   moveOffset: 30
   animationCurve: 28
---- !u!1 &714763763
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 714763765}
-  - component: {fileID: 714763764}
-  m_Layer: 0
-  m_Name: GameData
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &714763764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714763763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f5b7d5f9810c0f41acb45a92e27bbcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelScores: 0000000000000000
-  currentLevelIndex: 0
---- !u!4 &714763765
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714763763}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724802252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,7 +2315,6 @@ MonoBehaviour:
   score: 0
   lives: 3
   FreezeIndicator: {fileID: 1665496332}
-  timer: {fileID: 0}
 --- !u!1 &870363390
 GameObject:
   m_ObjectHideFlags: 0
@@ -13020,7 +12972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb910189dc8be4dc2a50681c1efd35f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionAnimator: {fileID: 0}
 --- !u!4 &1584080555
 Transform:
   m_ObjectHideFlags: 0
@@ -13175,10 +13126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 960, y: 540}
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -13532,6 +13483,7 @@ GameObject:
   - component: {fileID: 1775511486}
   - component: {fileID: 1775511489}
   - component: {fileID: 1775511488}
+  - component: {fileID: 1775511490}
   - component: {fileID: 1775511491}
   m_Layer: 0
   m_Name: GameObject
@@ -13629,9 +13581,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelScores: 0000000000000000
-  timeLeft:
-  - 0
-  - 0
   currentLevelIndex: 0
 --- !u!95 &1775511491
 Animator:
@@ -13885,14 +13834,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Furry
       objectReference: {fileID: 0}
-    - target: {fileID: 3647211262323822282, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
-      propertyPath: idle
-      value: 
-      objectReference: {fileID: 1775511488}
-    - target: {fileID: 3647211262323822282, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
-      propertyPath: patrol
-      value: 
-      objectReference: {fileID: 1775511489}
     - target: {fileID: 4521125648795168853, guid: 665082b0fd000c14db1231403c3f03ab, type: 3}
       propertyPath: inputManager
       value: 
@@ -14624,4 +14565,3 @@ SceneRoots:
   - {fileID: 1894124252215502594}
   - {fileID: 2091449893}
   - {fileID: 977317674}
-  - {fileID: 714763765}

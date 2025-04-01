@@ -70,9 +70,4 @@ public class Timer : MonoBehaviour
             GameManager.instance.TimesUP();
         }
     }
-
-    public float GetTimeLeft()
-    {
-        return timeLeft;
-    }
 }

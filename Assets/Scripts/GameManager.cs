@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image FreezeIndicator;
 
     [Header("Timer Mechanics")]
-    public Timer timer;
+    private Timer timer;
 
     public bool GetDownThrust()
     {
