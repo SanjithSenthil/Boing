@@ -129,7 +129,6 @@ public class SceneLoader : MonoBehaviour
 
         if (transitionAnimator == null)
         {
-            Debug.LogError("SceneLoader: No transitionAnimator assigned!");
             SceneManager.LoadScene(sceneName);  // Load scene immediately if no animator
             yield break; // Exit coroutine early to avoid errors
         }
