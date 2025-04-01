@@ -1,3 +1,6 @@
+### Gameplay Demo
+https://youtu.be/jLr8bGgygzo
+
 ### Feature Contributions:
 
 Reyhan: I worked on the adding the in game ui hud and pause menu scene on clicking esc. I also added the player prefab to our game and made player cloud animation on jump. Additionally i added camera pan feature where player can click c to view the whole level before playing it. Finally i added sound effects to scenes along with hit and collection sounds to enemies obstacles and the coin prefab.
