@@ -77,6 +77,9 @@ public class PauseMenuUI : MonoBehaviour
     public void GoToMainMenu()
     {
         PlayUISound();
+        // Reset the game data and scores
+        GameData.Instance.ResetScore();
+    
         Time.timeScale = 1f;
         //SceneManager.LoadScene("MainMenu");
 
