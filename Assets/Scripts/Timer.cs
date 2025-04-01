@@ -45,6 +45,11 @@ public class Timer : MonoBehaviour
         timerActive = false;
     }
 
+    public float GetTimeLeft()
+    {
+        return timeLeft;
+    }
+
     // Update is called once per frame
     void Update()
     {

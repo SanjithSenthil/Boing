@@ -47,6 +47,7 @@ public class PlayerCollision : MonoBehaviour
             Destroy(other.gameObject);
 
             // Check if SceneLoader exists before calling it
+            GameManager.instance.AddScore(Mathf.FloorToInt(GameManager.instance.timer.GetTimeLeft()));
             if (SceneLoader.instance != null)
             {
                 if (!isTransitioning)
