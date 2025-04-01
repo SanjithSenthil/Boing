@@ -1706,7 +1706,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Oh come on, you know the deal.\r\n\rBut fine\u2026 here you go:\r\n\r\nHit
     Spacebar twice for double JUMP.\n\r\nHit S mid-air to drop like a brick and break
-    boxes for power ups.\n\nHit 'C' to temporarily extend the camera to a full view
+    boxes for power ups.\n\nHit C to temporarily extend the camera to a full view
     of the platform.\r\n\r\nCollect coins, avoid dangerous obstacles and enemies,
     watch the timer, and don\u2019t die.\n\nFinish early to earn extra points - every
     second saved adds one point to your score!\r\n\r\nGood luck, fuzzball.\r\n"
