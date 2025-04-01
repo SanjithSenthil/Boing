@@ -20,6 +20,12 @@ public class GameData : MonoBehaviour
         }
     }
 
+    public void ResetScore()
+    {
+        levelScores[0] = 0;
+        levelScores[1] = 0;
+    }
+
     public int TotalScore()
     {
         return levelScores[0] + levelScores[1];
