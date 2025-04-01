@@ -600,11 +600,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oh come on, you know the deal.\r\n\r\nBut fine\u2026 here you go:\r\n\r\n<-
-    Move Left \u2014 Press A\r\n-> Move Right \u2014 Press D\r\nJump \u2014 Smash
-    that Spacebar (Maybe more than once)\r\nGround Slam? Dive? Panic button? \u2014
-    Hit **S** mid-air to drop like a brick.\r\n\r\nCollect coins, avoid spiky hugs,
-    watch the timer and don\u2019t die.\r\n\r\nGood luck, fuzzball.\r\n"
+  m_text: "Oh come on, you know the deal.\r\n\rBut fine\u2026 here you go:\r\n\r\nHit
+    Spacebar twice for double JUMP.\n\r\nHit S mid-air to drop like a brick and break
+    boxes for power ups.\n\nHit C to temporarily extend the camera to a full view
+    of the platform.\r\n\r\nCollect coins, avoid dangerous obstacles and enemies,
+    watch the timer, and don\u2019t die.\n\nFinish early to earn extra points - every
+    10 second saved adds one point to your score!\r\n\r\nGood luck, fuzzball.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
   m_sharedMaterial: {fileID: 1102009683558621136, guid: f8ea3eb827bd21842813f340da4b188a, type: 2}
@@ -631,7 +632,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.9
+  m_fontSize: 28.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
