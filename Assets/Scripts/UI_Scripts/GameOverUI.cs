@@ -18,7 +18,7 @@ public class GameOverUI : MonoBehaviour
         Debug.Log("Restart button clicked!");
         Time.timeScale = 1f;
         GameData.Instance.levelScores = new int[2]; // Reset 
-        SceneManager.LoadScene("Level 1"); 
+        SceneManager.LoadScene("Level 1");
     }
 
     public void GoToMainMenu()
