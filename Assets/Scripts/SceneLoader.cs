@@ -21,6 +21,7 @@ public class SceneLoader : MonoBehaviour
         // {
         //     Destroy(gameObject);
         // }
+        Debug.Log("SceneLoader Awake called");
         instance = this;
     }
     void Start()
@@ -63,6 +64,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
+        Debug.Log("LoadNextScene entered");
         if (!isTransitioning) // Ensure only one transition happens at a time
         {
             StartCoroutine(PlayTransition());
@@ -117,6 +119,7 @@ public class SceneLoader : MonoBehaviour
     }
     public void LoadSceneByName(string sceneName)
     {
+        Debug.Log("LoadSceneByName entered");
         if (!isTransitioning) // Ensure only one transition happens at a time
         {
             StartCoroutine(PlayTransition(sceneName));
@@ -125,6 +128,7 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator PlayTransition(string sceneName)
     {
+        Debug.Log("PlayTransition entered");
         isTransitioning = true;
 
         if (transitionAnimator == null)
@@ -134,6 +138,7 @@ public class SceneLoader : MonoBehaviour
             yield break; // Exit coroutine early to avoid errors
         }
 
+        Debug.Log("Starting scene transition animation...");
         transitionAnimator.SetTrigger("StartTransition"); // Start animation
         //yield return new WaitForSeconds(1f); // Wait for animation to complete
         //SceneManager.LoadScene(sceneName); // Load the specified scene
